@@ -3,85 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 5.2 – The Silent Flame</title>
+    <title>Protocol 5.2</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;1,700&family=Montserrat:wght@300;600&display=swap');
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body { 
-            background: #1a1a1a; /* Dark theme for a 'Secret' feel */
-            color: #e0e0e0;
+            background: #1a1a1a; /* Dark theme for mystery */
             font-family: 'Courier Prime', monospace;
+            color: #d1d1d1;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        /* Heart Trail */
         .heart-trail {
             position: fixed;
             pointer-events: none;
-            color: #ff4d6d;
+            color: #ff2e63;
             font-size: 15px;
             animation: floatUp 1.5s linear forwards;
             z-index: 9999;
         }
         @keyframes floatUp {
-            0% { transform: translateY(0) opacity: 1; }
-            100% { transform: translateY(-100px) opacity: 0; }
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100px); opacity: 0; }
         }
 
-        .wrapper {
+        .box {
             max-width: 700px;
             margin: 50px auto;
-            background: #262626;
-            padding: 50px 30px;
+            background: #252525;
+            padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
             border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        header { text-align: center; margin-bottom: 40px; }
-        h1 { font-family: 'Dancing Script', cursive; font-size: 3rem; color: #ff4d6d; }
-        .cipher { font-size: 1.5rem; letter-spacing: 10px; color: #777; margin: 15px 0; }
+        .glitch {
+            font-size: 2.5rem;
+            color: #ff2e63;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
 
-        .secret-box {
+        .cipher-key {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #08d9d6;
+            letter-spacing: 10px;
+            margin-bottom: 40px;
+        }
+
+        .log-entry {
             background: #1e1e1e;
             padding: 20px;
-            border-left: 3px solid #ff4d6d;
-            margin: 30px 0;
+            border-left: 3px solid #08d9d6;
+            margin-bottom: 25px;
+        }
+
+        .banglish {
             font-style: italic;
-            color: #bbb;
+            color: #eaeaea;
         }
 
-        .highlight { color: #ff4d6d; font-weight: bold; }
-
-        footer { 
-            text-align: center; 
-            margin-top: 60px; 
-            font-family: 'Dancing Script', cursive; 
-            font-size: 1.8rem; 
-            color: #ff4d6d; 
+        .secret-tag {
+            color: #555;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
         }
 
-        p { margin-bottom: 20px; font-size: 1.1rem; }
-        
-        .hint { font-size: 0.9rem; color: #555; text-align: center; }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .highlight { color: #ff2e63; }
     </style>
 </head>
 <body>
 
-    <div class="wrapper">
-        <header>
-            <h1>The Silent Flame</h1>
-            <div class="cipher">5 · 9 · 19 · 8 · 1</div>
-            <p style="color: #666;">Chapter 5.2 - Locked Memories</p>
-        </header>
+    <div class="box">
+        <div class="glitch">SILENT FLAME</div>
+        <div class="cipher-key">5 · 9 · 19 · 8 · 1</div>
 
-        <section>
-            <p><strong>Every Instant, Someone Heartily Admires...</strong></p>
-            
-            <p>Ei prithibi ta temporary hote pare, kinto kicho <span class="highlight">feelings eternal</span> hoye thake. Shob kotha shobai ke bolte nei, kinto moner ekta konay shegulo <span class="highlight">Silent Flame</span> hoye jole.</p>
+        <div class="log-entry">
+            <div class="secret-tag">// Entry 01: The Start</div>
+            <p class="banglish">Shobkuchu shuru hoyechilo shei <span class="highlight">"reels"</span> ar <span class="highlight">"c"</span> diye. Keu bhabeni "Mahfuza" namer piche ato boro ekta golpo thakbe. Shei secret <span class="highlight">"Allah kawke bolisna"</span> kotha gulo aj-o kintu ekhanei ache.</p>
+        </div>
 
-            <div class="secret-box">
-                "Oi je shuro ta...
-                
+        <div class="log-entry">
+            <div class="secret-tag">// Entry 02: The Phase</div>
+            <p class="banglish">Pox marks thakuk ba light brown skin, short pant ar genji pore thaka shei din gulo... shobi mone ache. Ekta chotto <span class="highlight">"ok"</span> jey koto kothar bhor boite pare, sheta hoyto amra chara keu bujhbe na.</p>
+        </div>
+
+        <div class="log-entry">
+            <div class="secret-tag">// Entry 03: The Wall</div>
+            <p class="banglish">Family janlo, block ashlo, shob thite gelo. Kintu Eid-er shei hashita? Ohon-o chokhe bhash-e. No grudge, no distance. Tumi <span class="highlight">real face</span> dekhale, ami amar <span class="highlight">real fear</span> share korlam.</p>
+        </div>
+
+        <div class="log-entry">
+            <div class="secret-tag">// Entry 04: The Future</div>
+            <p class="banglish">Exam er porer shei plan gulo kintu thaklo. Jemon ta chilo, temon tai thakbe. Keu konodin janbe na <span class="highlight">"Hashi-khushi"</span> meye tar piche kar admiation kaj kore.</p>
+        </div>
+
+        <p style="text-align: center; color: #888; font-size: 0.9rem;">
+            "Some connections don’t need to be loud to be real."
+        </p>
+
+        <footer>
+            — Admiring you, every instant.
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            let heart = document.createElement('span');
+            heart.innerHTML = '◈'; // Using a subtle symbol instead of heart for mystery
+            heart.className = 'heart-trail';
+            heart.style.left = e.pageX + 'px';
+            heart.style.top = e.pageY + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 1000);
+        });
+    </script>
+</body>
+</html>
