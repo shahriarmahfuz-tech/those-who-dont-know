@@ -5,194 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 5.2 – The Silent Flame</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@700&display=swap');
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         body { 
-            background: #fdf2f4;
-            font-family: 'Lora', serif;
-            color: #333;
-            line-height: 1.8;
+            background: #1a1a1a; /* Dark theme for a 'Secret' feel */
+            color: #e0e0e0;
+            font-family: 'Courier Prime', monospace;
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* মাউস ট্রেইল ইফেক্ট */
+        /* Heart Trail */
         .heart-trail {
             position: fixed;
             pointer-events: none;
             color: #ff4d6d;
-            font-size: 20px;
+            font-size: 15px;
             animation: floatUp 1.5s linear forwards;
             z-index: 9999;
         }
-
         @keyframes floatUp {
-            0% { transform: translateY(0) scale(1); opacity: 1; }
-            100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+            0% { transform: translateY(0) opacity: 1; }
+            100% { transform: translateY(-100px) opacity: 0; }
         }
 
-        .main-wrapper {
-            max-width: 850px;
+        .wrapper {
+            max-width: 700px;
             margin: 50px auto;
-            background: #fff;
-            padding: 60px 50px;
-            box-shadow: 0 10px 50px rgba(0,0,0,0.05);
-            border-radius: 5px;
-            position: relative;
-            border-top: 10px solid #ff758c;
+            background: #262626;
+            padding: 50px 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            border: 1px solid #333;
         }
 
-        header { text-align: center; margin-bottom: 60px; }
-        
-        .chapter-tag { 
-            text-transform: uppercase; 
-            letter-spacing: 4px; 
-            font-size: 14px; 
-            color: #ff758c;
-            font-weight: bold;
-        }
+        header { text-align: center; margin-bottom: 40px; }
+        h1 { font-family: 'Dancing Script', cursive; font-size: 3rem; color: #ff4d6d; }
+        .cipher { font-size: 1.5rem; letter-spacing: 10px; color: #777; margin: 15px 0; }
 
-        h1 { 
-            font-family: 'Dancing Script', cursive; 
-            font-size: 3.5rem; 
-            color: #ff4d6d;
-            margin: 15px 0;
-        }
-
-        .cipher { 
-            font-size: 1.8rem; 
-            letter-spacing: 8px; 
-            color: #999; 
-            margin-bottom: 20px;
-        }
-
-        .intro-text { font-style: italic; color: #666; font-size: 1.1rem; }
-
-        .content-section { margin-bottom: 40px; }
-        
-        h2 { 
-            font-size: 1.8rem; 
-            color: #ff4d6d; 
-            margin-bottom: 20px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-        }
-
-        p { margin-bottom: 20px; font-size: 1.15rem; text-align: justify; }
-
-        .memory-highlight {
-            background: #fff9fa;
-            padding: 25px;
-            border-left: 4px solid #ff758c;
-            font-style: italic;
-            margin: 30px 0;
-        }
-
-        .feeling-box {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 40px 0;
-        }
-
-        .feeling-card {
-            background: #fdfdfd;
+        .secret-box {
+            background: #1e1e1e;
             padding: 20px;
-            border: 1px solid #f0f0f0;
-            border-radius: 8px;
+            border-left: 3px solid #ff4d6d;
+            margin: 30px 0;
+            font-style: italic;
+            color: #bbb;
         }
 
-        .feeling-card h3 { color: #ff758c; margin-bottom: 10px; }
-
-        .bangla-text { font-family: 'Arial', sans-serif; color: #d63384; font-weight: bold; }
+        .highlight { color: #ff4d6d; font-weight: bold; }
 
         footer { 
             text-align: center; 
-            margin-top: 80px; 
-            padding-top: 30px; 
-            border-top: 1px solid #eee;
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.8rem;
-            color: #ff4d6d;
+            margin-top: 60px; 
+            font-family: 'Dancing Script', cursive; 
+            font-size: 1.8rem; 
+            color: #ff4d6d; 
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
-            .main-wrapper { padding: 30px 20px; margin: 20px; }
-            h1 { font-size: 2.5rem; }
-            .feeling-box { grid-template-columns: 1fr; }
-        }
+        p { margin-bottom: 20px; font-size: 1.1rem; }
+        
+        .hint { font-size: 0.9rem; color: #555; text-align: center; }
     </style>
 </head>
 <body>
 
-    <div class="main-wrapper">
+    <div class="wrapper">
         <header>
-            <div class="chapter-tag">The Untold Journal</div>
             <h1>The Silent Flame</h1>
             <div class="cipher">5 · 9 · 19 · 8 · 1</div>
-            <p class="intro-text">"To the one who smiles even when the world doesn't know."</p>
+            <p style="color: #666;">Chapter 5.2 - Locked Memories</p>
         </header>
 
-        <div class="content-section">
+        <section>
             <p><strong>Every Instant, Someone Heartily Admires...</strong></p>
-            <p>কাউকে পছন্দ করার অনুভূতিটা সবসময় চিৎকার করে জানানোর হয় না। কিছু ভালো লাগা থাকে খুব শান্ত, যা হৃদয়ের এক কোণে মোমের মতো জ্বলতে থাকে। ইনবক্সের ব্লক, পরিবারের কড়া শাসন আর সমাজের হাজারো নিয়মের ভিড়েও যখন কারো কথা ভেবে হাসি আসে, তখনই বোঝা যায়—এই টানটা সাধারণ নয়।</p>
             
-            <p>In a world full of temporary things, you became my quietest eternal feeling. আমাদের শুরুটা হয়তো সাধারণ ছিল, কিন্তু আজ যখন পেছনে ফিরে তাকাই, প্রতিটা মুহূর্ত খুব স্পেশাল মনে হয়।</p>
-        </div>
+            <p>Ei prithibi ta temporary hote pare, kinto kicho <span class="highlight">feelings eternal</span> hoye thake. Shob kotha shobai ke bolte nei, kinto moner ekta konay shegulo <span class="highlight">Silent Flame</span> hoye jole.</p>
 
-        <div class="memory-highlight">
-            "We started with reels and <strong>“c”</strong>, turned into <strong>“Mahfuza”</strong> and secret <strong>“Allah kawke bolisna”</strong>. 
-            Pox marks, light brown skin, short pant + genji, and a simple <strong>“ok”</strong> that carried more weight than a thousand words."
-        </div>
-
-        <div class="content-section">
-            <h2>The Strength of Silence</h2>
-            <p>পরিবার জানলো, ব্লক আসলো, তারপর দীর্ঘ এক নীরবতা। কিন্তু সেই নীরবতা আমাদের দূরত্ব বাড়াতে পারেনি। ঈদে যখন তুমি সেই চেনা হাসিটা নিয়ে সামনে দাঁড়ালে, আমি অবাক হয়ে তাকিয়ে ছিলাম। কোনো অভিযোগ নেই, কোনো দূরত্ব নেই—ঠিক যেন আগের মতোই সহজ।</p>
-            
-            <p>তুমি তোমার আসল চেহারা শেয়ার করলে, আর আমি শেয়ার করলাম আমার গভীর ভয়। এই যে বিশ্বাস, এটাই তো আসল ভালোবাসা। যেখানে কোনো মুখোশ নেই, শুধু দুটো মানুষের একে অপরের প্রতি নিখাদ টান আছে।</p>
-        </div>
-
-        <div class="feeling-box">
-            <div class="feeling-card">
-                <h3>The Persistence</h3>
-                <p>এটি এমন এক ভালোবাসা যা ব্লকের মেসেজ, ফ্যামিলি ওয়ার্নিং আর শত বাধা পেরিয়েও টিকে থাকে।</p>
-            </div>
-            <div class="feeling-card">
-                <h3>The "OK" Smile</h3>
-                <p>সবকিছুর পরেও যখন একটি সাধারণ "OK" এর মধ্যে দিয়ে সব পাওয়া হয়ে যায়, তার আনন্দ অন্যরকম।</p>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <p>আমরা প্ল্যান করেছি পরীক্ষার পর ঘুরে বেড়াবো। যেন মাঝখানে কোনো ঝড় বয়ে যায়নি। পৃথিবী হয়তো জানবে না আমাদের এই গল্পের গভীরতা কতটুকু। কিন্তু আমি জানি। আমি জানি সেই হাসিটার মূল্য কতখানি যা আমাকে প্রতিবার নতুন করে বাঁচতে শেখায়।</p>
-            
-            <p>To the girl who never got angry, who always stayed <span class="bangla-text">“হাসি-খুশি”</span> — Thank you for teaching me that some connections don’t need to be loud to be real.</p>
-        </div>
-
-        <footer>
-            — Someone who still admires you, every instant.
-        </footer>
-    </div>
-
-    <script>
-        document.addEventListener('mousemove', function(e) {
-            let heart = document.createElement('span');
-            heart.innerHTML = '❤️';
-            heart.className = 'heart-trail';
-            heart.style.left = e.pageX + 'px';
-            heart.style.top = e.pageY + 'px';
-            
-            let size = Math.random() * 15 + 10;
-            heart.style.fontSize = size + 'px';
-            
-            document.body.appendChild(heart);
-            
-            setTimeout(() => {
-                heart.remove();
-            }, 1500);
-        });
-    </script>
-</body>
-</html>
+            <div class="secret-box">
+                "Oi je shuro ta...
+                
