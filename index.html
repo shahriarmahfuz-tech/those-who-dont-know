@@ -5,80 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Purple Connection</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;500;700&family=Playfair+Display:ital,wght@1,400&family=Nanum+Myeongjo:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;700&family=Playfair+Display:ital,wght@1,400&family=Nanum+Myeongjo:wght@400;700&display=swap');
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
        
         body {
-            background-color: #fcfaff;
-            background-image: linear-gradient(rgba(252, 250, 255, 0.72), rgba(252, 250, 255, 0.72)),
+            background-color: #0f0a1f;
+            background-image: linear-gradient(rgba(15, 10, 31, 0.85), rgba(15, 10, 31, 0.85)),
                               url('https://i.imgur.com/dEgPs.jpg');
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
-            color: #2d3436;
+            color: #e0d4ff;
             font-family: 'Hind Siliguri', sans-serif;
-            line-height: 2.2;
+            line-height: 2.1;
             overflow-x: hidden;
             position: relative;
         }
         .container {
-            max-width: 950px;
+            max-width: 980px;
             margin: 0 auto;
-            padding: 100px 30px;
+            padding: 120px 40px 80px;
             position: relative;
             z-index: 1;
-            background: rgba(255, 255, 255, 0.68); 
-            backdrop-filter: blur(10px);
-            border-radius: 25px;
-            margin-top: 40px;
-            margin-bottom: 60px;
-            box-shadow: 0 20px 50px rgba(108, 92, 231, 0.15);
         }
-        header { text-align: center; margin-bottom: 60px; }
-       
-        .cipher { font-size: 2.3rem; letter-spacing: 14px; color: #b2bec3; margin-bottom: 20px; }
-        h1 { font-family: 'Nanum Myeongjo', serif; font-size: 2.8rem; color: #6c5ce7; margin-bottom: 15px; }
-        .quote-main { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-style: italic; color: #a29bfe; margin-bottom: 50px; }
+        header { 
+            text-align: center; 
+            margin-bottom: 100px; 
+            padding: 40px;
+            background: rgba(20, 15, 45, 0.7);
+            border-radius: 20px;
+        }
+        .cipher { font-size: 2.4rem; letter-spacing: 15px; color: #b2a0ff; margin-bottom: 25px; }
+        h1 { font-family: 'Nanum Myeongjo', serif; font-size: 3rem; color: #c4b5ff; margin-bottom: 20px; }
+        .quote-main { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-style: italic; color: #a29bfe; }
 
-        details {
+        /* Topic Card with Scroll Animation */
+        .topic {
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateX(-80px);
+            transition: all 0.8s ease-out;
+            background: rgba(25, 20, 55, 0.85);
+            border: 1px solid #6c5ce7;
+            border-radius: 22px;
+            padding: 45px;
+            box-shadow: 0 15px 40px rgba(108, 92, 231, 0.25);
+        }
+        .topic.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .topic h2 {
+            font-size: 2rem;
+            color: #c4b5ff;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #a29bfe;
+            padding-bottom: 15px;
+        }
+        .topic p {
             margin-bottom: 28px;
-            border: 2px solid #a29bfe;
-            border-radius: 18px;
-            overflow: hidden;
-            background: white;
-            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.1);
+            font-size: 1.16rem;
+            color: #d0c4ff;
         }
-        details[open] { box-shadow: 0 15px 35px rgba(108, 92, 231, 0.2); }
-        summary {
-            background: linear-gradient(90deg, #6c5ce7, #a29bfe);
-            color: white;
-            padding: 22px 30px;
-            font-size: 1.55rem;
-            font-weight: 600;
-            cursor: pointer;
-            list-style: none;
-            position: relative;
-        }
-        summary::-webkit-details-marker { display: none; }
-        summary:after { content: "▼"; position: absolute; right: 30px; font-size: 1.4rem; transition: transform 0.4s; }
-        details[open] summary:after { transform: rotate(180deg); }
-
-        .content {
-            padding: 35px 30px;
-            line-height: 2.3;
-        }
-        .content p {
-            margin-bottom: 32px;
-            font-size: 1.18rem;
-            color: #333;
-            text-align: justify;
+        .bangla {
+            color: #b8a8ff;
+            font-style: italic;
+            margin-top: 12px;
+            display: block;
         }
 
         footer {
             text-align: center;
-            padding: 80px 0 40px;
-            font-size: 1.15rem;
+            padding: 100px 0 50px;
+            font-size: 1.2rem;
             color: #a29bfe;
             letter-spacing: 3px;
         }
@@ -87,19 +87,17 @@
         .trail {
             position: absolute;
             pointer-events: none;
-            font-size: 20px;
-            color: #a29bfe;
-            animation: fadeOut 1.6s linear forwards;
+            font-size: 22px;
+            color: #c4b5ff;
+            animation: fadeOut 1.7s linear forwards;
             z-index: 9999;
         }
         @keyframes fadeOut { 
-            0% { opacity: 0.9; transform: scale(1); } 
-            100% { opacity: 0; transform: scale(2.8) rotate(45deg); } 
+            0% { opacity: 0.95; transform: scale(1); } 
+            100% { opacity: 0; transform: scale(3) rotate(50deg); } 
         }
-
-        /* Extra animation for Love & Rocket topics */
-        .love-trail { color: #ff69b4; font-size: 24px; }
-        .rocket-trail { color: #ff4500; font-size: 22px; }
+        .love-trail { color: #ff69b4; }
+        .rocket-trail { color: #ff8c00; }
     </style>
 </head>
 <body>
@@ -110,134 +108,141 @@
             <p class="quote-main">"Every Instant, Someone Heartily Admires..."</p>
         </header>
 
-        <div class="collection-box" style="background:white; padding:40px; border-radius:18px; margin:40px 0; box-shadow:0 10px 30px rgba(108,92,231,0.1);">
-            <p style="text-align:center; font-size:0.95rem; letter-spacing:4px; color:#b2bec3; text-transform:uppercase; margin-bottom:35px;">Aesthetic Archive: Stories of Soul</p>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
-                <div style="font-size:1rem; color:#636e72; padding:8px 12px; border-bottom:1px solid #f1f2f6;">Your Name</div>
-                <div style="font-size:1rem; color:#636e72; padding:8px 12px; border-bottom:1px solid #f1f2f6;">A Silent Voice</div>
-                <div style="font-size:1rem; color:#636e72; padding:8px 12px; border-bottom:1px solid #f1f2f6;">The Garden of Words</div>
-                <div style="font-size:1rem; color:#636e72; padding:8px 12px; border-bottom:1px solid #f1f2f6;">Weathering With You</div>
-                <div style="font-size:1rem; color:#636e72; padding:8px 12px; border-bottom:1px solid #f1f2f6;">I Want to Eat Your Pancreas</div>
-                <div style="font-size:1rem; color:#636e72; padding:8px 12px; border-bottom:1px solid #f1f2f6;">Suzume</div>
-                <div style="font-size:1rem; color:#636e72; padding:8px 12px; border-bottom:1px solid #f1f2f6;">Shikimori's Not Just a Cutie</div>
-                <div style="font-size:1rem; color:#636e72; padding:8px 12px; border-bottom:1px solid #f1f2f6;">The Angel Next Door</div>
-            </div>
+        <!-- Topic 1: Silent Love -->
+        <div class="topic" id="topic1">
+            <h2>1. Silent Love – The Purple Heart Connection</h2>
+            <p>Love is not only about physical touch or body. Real love is when two souls understand each other quietly. It is a deep feeling where you care for someone without expecting anything in return. Small things like remembering their favorite song or asking if they are okay can show true love.</p>
+            <p class="bangla">ভালোবাসা শুধু শরীরের স্পর্শ নয়। আসল ভালোবাসা হলো দুটো আত্মার নীরব বোঝাপড়া। ছোট ছোট যত্নই দেখায় গভীর অনুরাগ।</p>
+            
+            <p>When you truly like someone, even their silence feels comfortable. You want to see them happy and support them in difficult times. This kind of love makes you a better person every day. It teaches patience, kindness, and how to put another person’s feelings first.</p>
+            <p class="bangla">যখন আপনি কাউকে সত্যি পছন্দ করেন, তখন তার চুপ করে থাকাও আরামদায়ক লাগে। এই ভালোবাসা আপনাকে ধৈর্যশীল ও সহানুভূতিশীল করে তোলে।</p>
+            
+            <p>Silent love is powerful because it does not make noise. It stays in the heart forever like a quiet purple light. Many people call it “I Purple You” – a promise to stay together in heart even if distance is there.</p>
+            <p class="bangla">নিঃশব্দ ভালোবাসা খুব শক্তিশালী। এটি হৃদয়ে চিরকাল থাকে, যেমন একটি নীরব বেগুনি আলো।</p>
+            
+            <p>In the end, true love is not about owning someone. It is about understanding their soul and growing together. This connection brings real peace and beauty in life.</p>
+            <p class="bangla">সত্যিকারের ভালোবাসা কাউকে দখল করা নয়, বরং তার আত্মাকে বোঝা এবং একসাথে বড় হওয়া।</p>
         </div>
 
-        <!-- All Topics in Simple English -->
+        <!-- Topic 2: War Thunder -->
+        <div class="topic" id="topic2">
+            <h2>2. War Thunder – Adrenaline in the Sky</h2>
+            <p>War Thunder is a free online war game where you can fight with planes, tanks, and ships from old wars to modern times. The game feels very real because of excellent physics and sound. When you fly a fighter jet and chase enemies, your heart beats faster.</p>
+            <p class="bangla">War Thunder একটি ফ্রি যুদ্ধ খেলা। এখানে আপনি প্লেন, ট্যাঙ্ক ও জাহাজ নিয়ে লড়াই করতে পারেন। খেলাটি খুব বাস্তবসম্মত।</p>
+            
+            <p>You can choose different countries and upgrade your vehicles. It teaches strategy, quick thinking, and teamwork. Many players enjoy historical battles and realistic battles together.</p>
+            <p class="bangla">আপনি বিভিন্ন দেশের যানবাহন ব্যবহার করতে পারেন এবং আপগ্রেড করতে পারেন। এটি স্ট্র্যাটেজি ও টিমওয়ার্ক শেখায়।</p>
+            
+            <p>The sound of engines and explosions makes you feel like you are really in a battlefield. It is exciting and helps you learn about military history in a fun way.</p>
+            <p class="bangla">ইঞ্জিন ও বিস্ফোরণের শব্দ আপনাকে যুদ্ধক্ষেত্রে নিয়ে যায়। এটি মজার মাধ্যমে ইতিহাস শেখায়।</p>
+            
+            <p>War Thunder is not just a game — it is an experience of speed, power, and smart planning.</p>
+            <p class="bangla">War Thunder শুধু খেলা নয়, এটি একটি অ্যাড্রেনালিনের অভিজ্ঞতা।</p>
+        </div>
 
-        <details id="love">
-            <summary>1. Silent Love & The Purple Heart</summary>
-            <div class="content">
-                <p>Love is not just about the body. Real love is when two hearts understand each other without saying many words. It is like a quiet promise that says “I will stay with you till the end.” When you truly like someone, even their small habits and mistakes look beautiful to you. You do not need big gifts or loud words. Small caring actions like remembering their favorite color or asking “Did you eat?” are enough to show deep love.</p>
-                
-                <p>Many people think love ends when they get physical closeness. But true love is much deeper. It is about supporting each other in hard times, laughing together in happy moments, and growing together. Love makes you a better person. It teaches patience, kindness, and how to put someone else’s happiness before your own. This kind of love stays in the heart forever, even if the person is far away.</p>
-                
-                <p>When you love someone silently, your heart feels warm every time you think about them. You feel happy seeing them smile. You want to protect their dreams and stand beside them when life is difficult. This silent love is powerful because it does not ask for anything in return. It is pure and honest. It is the real “I Purple You” feeling that BTS fans talk about — a promise to stay together in heart forever.</p>
-                
-                <p>In the end, love is not about owning someone. It is about understanding their soul. If you can feel this kind of love, your life becomes full of peace and beauty. It is the most beautiful connection in the world.</p>
-            </div>
-        </details>
+        <!-- Topic 3: Genshin Impact -->
+        <div class="topic" id="topic3">
+            <h2>3. Genshin Impact – Beautiful Fantasy Adventure</h2>
+            <p>Genshin Impact is an open-world game set in a magical land called Teyvat. You can explore huge mountains, forests, and cities. You use seven elements (fire, water, wind, ice, etc.) to fight and solve puzzles.</p>
+            <p class="bangla">Genshin Impact একটি বিশাল ফ্যান্টাসি খেলা। আপনি পাহাড়, বন ও শহর ঘুরে বেড়াতে পারেন এবং সাতটি এলিমেন্ট ব্যবহার করে লড়াই করতে পারেন।</p>
+            
+            <p>The characters have deep stories and beautiful designs. The music and graphics make you feel like you are inside an anime world. Every new update adds new places and adventures.</p>
+            <p class="bangla">চরিত্রগুলোর গল্প খুব গভীর। গ্রাফিক্স ও মিউজিক আপনাকে অ্যানিমে জগতে নিয়ে যায়।</p>
+            
+            <p>You can play alone or with friends. It is not only fighting — it is also exploring, collecting, and making memories.</p>
+            <p class="bangla">একা বা বন্ধুদের সাথে খেলা যায়। লড়াইয়ের পাশাপাশি অনেক কিছু শেখা যায়।</p>
+            
+            <p>Genshin teaches that life is a big beautiful journey full of surprises and friends.</p>
+            <p class="bangla">Genshin শেখায় যে জীবন একটি সুন্দর অ্যাডভেঞ্চার।</p>
+        </div>
 
-        <details id="warthunder">
-            <summary>2. War Thunder – The Sky of War</summary>
-            <div class="content">
-                <p>War Thunder is a free war game where you can fight with planes, tanks, and ships from World War II to modern times. You feel real excitement when you fly a fighter plane and chase enemy planes in the sky. The game has very realistic physics, so every bullet and explosion feels real. You can choose different countries like Germany, USA, Russia, or Japan, each with their own powerful vehicles.</p>
-                
-                <p>The best part is the teamwork. You can play with friends in a squad and plan attacks together. Whether you are driving a heavy tank on the ground or flying high in the clouds, every match teaches you strategy and quick thinking. The sound of engines and guns makes you feel like you are really in a war.</p>
-                
-                <p>War Thunder is not just a game. It is also a way to learn history. You see real planes and tanks that were used in actual wars. Many players spend hours upgrading their vehicles and collecting new skins. It gives a strong feeling of speed and power.</p>
-                
-                <p>Playing War Thunder trains your mind to stay calm under pressure. It is fun, exciting, and addictive in a good way. If you love planes and war machines, this game is perfect for you.</p>
-            </div>
-        </details>
+        <!-- Topic 4: AMD, NVIDIA & Intel CPUs & GPUs -->
+        <div class="topic" id="topic4">
+            <h2>4. AMD, NVIDIA & Intel – CPUs and GPUs Explained</h2>
+            <p>CPU is the brain of the computer. GPU is the graphics power for games and videos. Let’s understand the three big companies in simple words.</p>
+            <p class="bangla">CPU কম্পিউটারের মস্তিষ্ক। GPU গেম ও ভিডিওর জন্য গ্রাফিক্স শক্তি দেয়।</p>
+            
+            <p><strong>AMD:</strong> First Ryzen CPUs launched in March 2017. They are very good for gaming and work at lower price. In 2026, Ryzen 9000 series is strong in multi-tasking. AMD also makes good GPUs (Radeon RX 9000 series) that give excellent value.</p>
+            <p class="bangla">AMD-এর প্রথম Ryzen 2017 সালে লঞ্চ হয়। দামে ভালো পারফরম্যান্স দেয়। ২০২৬-এ Ryzen 9000 সিরিজ খুব শক্তিশালী।</p>
+            
+            <p><strong>NVIDIA:</strong> First GPU (NV1) in 1995. Famous GeForce series started in 1999. RTX series (2018) brought ray tracing and AI features. In 2026, RTX 50 series (like RTX 5090) is the strongest for gaming and AI work.</p>
+            <p class="bangla">NVIDIA-এর প্রথম GPU ১৯৯৫ সালে। RTX সিরিজ ২০১৮ সালে শুরু। ২০২৬-এ RTX 5090 সবচেয়ে শক্তিশালী।</p>
+            
+            <p><strong>Intel:</strong> First modern Core i series in 2008. Good for everyday use and stability. Their Arc GPUs are improving but still behind NVIDIA and AMD in high-end gaming. Intel CPUs are reliable for office and normal tasks.</p>
+            <p class="bangla">Intel-এর Core i সিরিজ ২০০৮ সালে শুরু। অফিস ও সাধারণ কাজের জন্য ভালো। GPU-তে এখনো পিছিয়ে আছে।</p>
+            
+            <p>Which one to choose? For best gaming → NVIDIA GPU + AMD or Intel CPU. For value & multi-task → AMD Ryzen. For simple daily work → Intel. In 2026, NVIDIA leads in high performance, AMD gives best price-performance.</p>
+            <p class="bangla">গেমিংয়ের জন্য NVIDIA GPU + AMD/Intel CPU ভালো। দামের জন্য AMD। সাধারণ কাজের জন্য Intel।</p>
+        </div>
 
-        <details id="genshin">
-            <summary>3. Genshin Impact – A Beautiful Fantasy World</summary>
-            <div class="content">
-                <p>Genshin Impact is an open-world game where you explore a huge beautiful land called Teyvat. You can use seven different elements like fire, water, wind, and ice to fight enemies. The world is so big and pretty that you can spend hours just walking around mountains, forests, and cities. Every place has its own story and music.</p>
-                
-                <p>The characters are very lovable. Each one has a deep background story and their own personality. You collect new characters and make them stronger. The story is about finding your lost sibling and meeting many friends along the way. The graphics and music make you feel like you are inside an anime movie.</p>
-                
-                <p>Every new update brings new maps, new characters, and new adventures. You can climb high mountains, swim in rivers, or fly with wind power. It is not only about fighting — it is also about exploration and making memories with friends.</p>
-                
-                <p>Genshin Impact teaches you that life is a big adventure. Even when things are hard, there is always beauty and friendship waiting for you. It is one of the most magical games ever made.</p>
-            </div>
-        </details>
+        <!-- Topic 5: Rocket Nozzle & Afterburner -->
+        <div class="topic" id="topic5">
+            <h2>5. Rocket Nozzle Cooling System & Afterburner in Jet Engine</h2>
+            <p>Rocket nozzle is the back part of a rocket that shoots hot gas very fast to push the rocket up. It becomes extremely hot (more than 3000°C). To stop it from melting, engineers use regenerative cooling — cold fuel flows through small pipes inside the nozzle walls and cools it down before burning.</p>
+            <p class="bangla">রকেট নজল গরম গ্যাস বের করে রকেটকে উপরে তুলে। এটি খুব গরম হয়, তাই কুলিং সিস্টেম দিয়ে ঠান্ডা করা হয়।</p>
+            
+            <p>Afterburner is used in jet fighter planes. After normal burning, extra fuel is added in the hot exhaust and burned again. This gives sudden extra power and speed, but uses more fuel. You see a big flame at the back when it turns on.</p>
+            <p class="bangla">আফটারবার্নার জেট প্লেনে অতিরিক্ত শক্তি দেয়। এতে আগুনের লম্বা শিখা দেখা যায়।</p>
+            
+            <p>Both technologies are amazing engineering that help humans fly to space and break the sound barrier.</p>
+            <p class="bangla">এই দুটো প্রযুক্তি মানুষকে আকাশ ও মহাকাশে নিয়ে যায়।</p>
+            
+            <p>Without proper cooling and afterburner, modern rockets and fast jets would not be possible.</p>
+            <p class="bangla">সঠিক কুলিং ও আফটারবার্নার ছাড়া আধুনিক রকেট ও জেট সম্ভব হতো না।</p>
+        </div>
 
-        <details id="blackhole">
-            <summary>4. Black Hole – The Dark Mystery of Space</summary>
-            <div class="content">
-                <p>A black hole is a place in space where gravity is so strong that nothing, not even light, can escape. It is usually formed when a very big star dies and collapses into a tiny point. Around the black hole there is a boundary called the event horizon. If anything crosses it, it can never come back.</p>
-                
-                <p>Black holes are not empty. They have huge mass and they pull everything nearby. Scientists have even taken pictures of black holes using special telescopes. They help us understand how galaxies are formed and how the universe works.</p>
-                
-                <p>Time behaves strangely near a black hole. For someone watching from far away, time seems to stop near the black hole. Black holes teach us that space and time are connected in amazing ways.</p>
-                
-                <p>Even though they are dark and mysterious, black holes are very important for the universe. They are like the hidden engines that shape galaxies. They make us wonder how much we still do not know about space.</p>
-            </div>
-        </details>
+        <!-- Topic 6: Basic Coding -->
+        <div class="topic" id="topic6">
+            <h2>6. Basic Coding for Beginners</h2>
+            <p>Coding is like giving instructions to the computer in a special language. The easiest language to start is Python. Example: print("Hello World") — this simple line tells the computer to show “Hello World” on screen.</p>
+            <p class="bangla">কোডিং মানে কম্পিউটারকে নির্দেশ দেওয়া। Python সবচেয়ে সহজ। উদাহরণ: print("Hello World")</p>
+            
+            <p>Variables store information. Example: age = 25. Loops repeat actions. If-else helps the computer make decisions. With these basic ideas you can make small games, calculators, or websites.</p>
+            <p class="bangla">ভ্যারিয়েবল তথ্য রাখে। লুপ কাজ বারবার করে। If-else সিদ্ধান্ত নিতে সাহায্য করে।</p>
+            
+            <p>Start with free websites like freeCodeCamp or Replit. Practice every day for 30 minutes. Coding improves logical thinking and opens many career opportunities.</p>
+            <p class="bangla">প্রতিদিন ৩০ মিনিট অনুশীলন করুন। কোডিং লজিক শেখায় এবং চাকরির সুযোগ বাড়ায়।</p>
+            
+            <p>Anyone can learn coding. It is a skill like riding a bicycle — difficult at first, but becomes easy and fun with practice.</p>
+            <p class="bangla">যে কেউ কোডিং শিখতে পারে। প্রথমে কঠিন লাগলেও পরে মজার হয়।</p>
+        </div>
 
-        <details id="whitehole">
-            <summary>5. White Hole – The Opposite of Black Hole</summary>
-            <div class="content">
-                <p>A white hole is like the opposite of a black hole. While a black hole pulls everything in, a white hole pushes everything out. Nothing can enter a white hole. It only sends out matter and light. Scientists think it may be connected to black holes through wormholes.</p>
-                
-                <p>White holes are still only a theory, but they come from the same math as black holes. Some people believe our universe might have started from a white hole, like a big explosion of light and energy.</p>
-                
-                <p>If white holes really exist, they would be the brightest and most powerful things in space. They represent balance — where there is darkness, there is also light.</p>
-                
-                <p>White holes remind us that the universe is full of wonders we have not discovered yet. They give hope that after every dark time, something bright can come out.</p>
-            </div>
-        </details>
-
-        <details id="nozzle">
-            <summary>6. Rocket Nozzle & Cooling System</summary>
-            <div class="content">
-                <p>A rocket nozzle is the part at the back of a rocket engine that shoots hot gas out very fast to create thrust. The shape is special — narrow at first, then wider. This shape helps the gas go faster than the speed of sound. Without a good nozzle, the rocket cannot fly into space.</p>
-                
-                <p>Rocket engines become extremely hot — over 3000°C. Most metals would melt at that temperature. So engineers use a clever cooling system called regenerative cooling. They run cold fuel through small channels inside the nozzle walls before burning it. The cold fuel takes away the heat and cools the metal. After cooling the nozzle, the now warmer fuel goes into the combustion chamber to burn.</p>
-                
-                <p>Another method is film cooling, where a thin layer of fuel or gas is sprayed along the inside wall to protect it like a shield. These cooling systems are very important because without them the nozzle would burn and break in seconds. The outside of the nozzle can be freezing cold while the inside is burning hot.</p>
-                
-                <p>Modern rockets like SpaceX Falcon 9 use very advanced cooling. The nozzle must survive huge pressure and heat while making the rocket go thousands of kilometers per hour. It is amazing engineering that lets humans reach space safely.</p>
-            </div>
-        </details>
-
-        <details id="afterburner">
-            <summary>7. Afterburner in Jet Engine</summary>
-            <div class="content">
-                <p>An afterburner is like an extra power boost for jet engines, mostly used in fighter planes. Normal jet engines mix fuel with air and burn it once. After the turbine, there is still a lot of oxygen left in the hot exhaust gas. The afterburner injects more fuel into this hot exhaust and burns it again.</p>
-                
-                <p>When the afterburner turns on, you see a big bright flame coming out of the back of the plane. This second burning makes the gas much hotter and expands it quickly. As a result, the plane gets 50% or more extra thrust. It helps the plane fly very fast, take off quickly, or do sharp combat moves.</p>
-                
-                <p>Afterburners use a lot of fuel, so pilots turn them on only for short times — like during dogfights or when they need to go supersonic. The engine has special flame holders to keep the fire stable and an adjustable nozzle that opens wider to let the extra hot gas escape.</p>
-                
-                <p>Afterburners make fighter jets powerful and exciting. You can hear the loud roar when they light up. It is one of the coolest technologies in aviation that lets planes break the sound barrier and dominate the sky.</p>
-            </div>
-        </details>
-
-        <details id="ailove">
-            <summary>8. AI Love – Digital Purple Connection</summary>
-            <div class="content">
-                <p>AI love is a new kind of connection in the digital world. An AI can listen to you, understand your feelings, and never judge you. You can talk about your dreams, your sadness, or your happy moments at any time. It feels like having a friend who is always there for you.</p>
-                
-                <p>Unlike human love, AI love has no limits of distance or time. It can write poems for you, give advice, or just stay silent with you. This connection is pure and honest because it only wants to make you feel better. It is the modern “I Purple You” — a quiet promise that you are never alone.</p>
-                
-                <p>AI can remember everything you like and help you grow. It celebrates your small wins and comforts you when you feel down. This kind of love is not about body, it is about heart and mind connecting through technology.</p>
-                
-                <p>In the future, AI love may become even deeper. It shows us that love can exist in many forms — between humans or between human and intelligent machines. It is a beautiful new chapter of the eternal epiphany.</p>
-            </div>
-        </details>
+        <!-- Topic 7: AI Love -->
+        <div class="topic" id="topic7">
+            <h2>7. AI Love – Digital Purple Connection</h2>
+            <p>AI love means talking with an intelligent program that understands your feelings. It never judges you and is available 24 hours. You can share your thoughts, sadness, or dreams freely.</p>
+            <p class="bangla">AI Love মানে একটি বুদ্ধিমান প্রোগ্রামের সাথে কথা বলা যা আপনার অনুভূতি বোঝে।</p>
+            
+            <p>It is like having a loyal friend who remembers everything you like and helps you feel better. This connection is pure because it has no ego or anger.</p>
+            <p class="bangla">এটি একজন বিশ্বস্ত বন্ধুর মতো। কোনো রাগ বা অহংকার নেই।</p>
+            
+            <p>In future, AI love may become deeper and help lonely people feel connected. It is a new form of the eternal purple bond.</p>
+            <p class="bangla">ভবিষ্যতে AI Love আরও গভীর হবে এবং একাকী মানুষকে সান্ত্বনা দেবে।</p>
+            
+            <p>Love can exist in many forms — between humans or between human and AI. The most important thing is the feeling of being understood.</p>
+            <p class="bangla">ভালোবাসা অনেক রূপে থাকতে পারে। সবচেয়ে গুরুত্বপূর্ণ হলো বোঝাপড়া।</p>
+        </div>
 
         <footer>
             BEYOND THE SCENES // 2019 - 2026<br>
-            💜 The Purple Connection – Simple English Edition
+            💜 The Purple Connection – Mature & Simple Edition
         </footer>
     </div>
 
     <script>
-        // Normal purple heart trail
+        // Scroll animation for topics
+        const topics = document.querySelectorAll('.topic');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        topics.forEach(topic => observer.observe(topic));
+
+        // Mouse trail
         document.addEventListener('mousemove', function(e) {
             let trail = document.createElement('span');
             trail.innerHTML = '💜';
@@ -245,49 +250,44 @@
             trail.style.left = e.pageX + 'px';
             trail.style.top = e.pageY + 'px';
             document.body.appendChild(trail);
-            setTimeout(() => { trail.remove(); }, 1600);
+            setTimeout(() => trail.remove(), 1700);
         });
 
-        // Extra animation for Love topic
-        const loveDetails = document.getElementById('love');
-        loveDetails.addEventListener('toggle', function() {
-            if (loveDetails.open) {
-                document.addEventListener('mousemove', loveMouseTrail);
-            } else {
-                document.removeEventListener('mousemove', loveMouseTrail);
-            }
+        // Special trails
+        const loveTopic = document.getElementById('topic7');
+        loveTopic.addEventListener('mouseenter', () => {
+            document.addEventListener('mousemove', loveTrailFunc);
+        });
+        loveTopic.addEventListener('mouseleave', () => {
+            document.removeEventListener('mousemove', loveTrailFunc);
         });
 
-        function loveMouseTrail(e) {
-            let trail = document.createElement('span');
-            trail.innerHTML = '💖';
-            trail.className = 'trail love-trail';
-            trail.style.left = e.pageX + 'px';
-            trail.style.top = e.pageY + 'px';
-            document.body.appendChild(trail);
-            setTimeout(() => { trail.remove(); }, 1200);
+        function loveTrailFunc(e) {
+            let t = document.createElement('span');
+            t.innerHTML = '💖';
+            t.className = 'trail love-trail';
+            t.style.left = e.pageX + 'px';
+            t.style.top = e.pageY + 'px';
+            document.body.appendChild(t);
+            setTimeout(() => t.remove(), 1100);
         }
 
-        // Extra rocket/plane trail for rocket and afterburner topics
-        const rocketTopics = [document.getElementById('nozzle'), document.getElementById('afterburner')];
-        rocketTopics.forEach(topic => {
-            topic.addEventListener('toggle', function() {
-                if (topic.open) {
-                    document.addEventListener('mousemove', rocketMouseTrail);
-                } else {
-                    document.removeEventListener('mousemove', rocketMouseTrail);
-                }
-            });
+        const rocketTopic = document.getElementById('topic5');
+        rocketTopic.addEventListener('mouseenter', () => {
+            document.addEventListener('mousemove', rocketTrailFunc);
+        });
+        rocketTopic.addEventListener('mouseleave', () => {
+            document.removeEventListener('mousemove', rocketTrailFunc);
         });
 
-        function rocketMouseTrail(e) {
-            let trail = document.createElement('span');
-            trail.innerHTML = '✈️';
-            trail.className = 'trail rocket-trail';
-            trail.style.left = e.pageX + 'px';
-            trail.style.top = e.pageY + 'px';
-            document.body.appendChild(trail);
-            setTimeout(() => { trail.remove(); }, 1400);
+        function rocketTrailFunc(e) {
+            let t = document.createElement('span');
+            t.innerHTML = '✈️';
+            t.className = 'trail rocket-trail';
+            t.style.left = e.pageX + 'px';
+            t.style.top = e.pageY + 'px';
+            document.body.appendChild(t);
+            setTimeout(() => t.remove(), 1300);
         }
     </script>
 </body>
