@@ -3,105 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>নিঃশব্দ অনুভূতির কাব্য</title>
+    <title>The Purple Connection</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;500;700&family=Playfair+Display:ital,wght@1,400&family=Nanum+Myeongjo:wght@400;700&display=swap');
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
-            background-color: #ffffff; 
-            color: #1a1a1a; 
+            background-color: #fcfaff; /* Soft Lavender White */
+            color: #2d3436; 
             font-family: 'Hind Siliguri', sans-serif; 
-            line-height: 2.1;
+            line-height: 2.2;
             overflow-x: hidden;
         }
 
-        .container { max-width: 850px; margin: 0 auto; padding: 80px 40px; }
+        .container { max-width: 800px; margin: 0 auto; padding: 100px 30px; }
 
         header { text-align: center; margin-bottom: 80px; }
         
+        /* The Cipher Code */
         .cipher { 
-            font-size: 2rem; 
-            letter-spacing: 15px; 
-            color: #f2f2f2; 
+            font-size: 2.2rem; 
+            letter-spacing: 12px; 
+            color: #dcdde1; 
             font-weight: 300;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         h1 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 2.5rem; 
-            font-weight: 700; 
-            color: #111;
+            font-family: 'Nanum+Myeongjo', serif; 
+            font-size: 2.6rem; 
+            color: #6c5ce7; /* Subtle Purple Theme */
             margin-bottom: 20px;
         }
 
         .quote-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
             font-style: italic;
-            color: #666;
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            border-left: 3px solid #eee;
+            color: #a29bfe;
+            margin-bottom: 40px;
+        }
+
+        .section { margin-bottom: 120px; text-align: justify; }
+        
+        h2 { 
+            font-size: 1.8rem; 
+            margin-bottom: 35px; 
+            color: #4834d4;
+            border-left: 4px solid #a29bfe;
             padding-left: 20px;
         }
 
-        .content-section { margin-bottom: 100px; text-align: justify; }
-        
-        h2 { 
-            font-family: 'Hind Siliguri', sans-serif; 
-            font-size: 1.8rem; 
-            margin-bottom: 30px; 
-            color: #d63384;
-            border-bottom: 1px solid #f0f0f0;
-            padding-bottom: 10px;
-        }
+        p { margin-bottom: 30px; font-size: 1.15rem; color: #444; }
 
-        p { margin-bottom: 25px; font-size: 1.1rem; color: #333; }
-
-        .anime-box {
-            background: #fffafa;
+        /* Anime & Drama Collection */
+        .collection-box {
+            background: white;
             padding: 40px;
-            border: 1px solid #ffeef2;
-            margin: 50px 0;
-            border-radius: 8px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.05);
+            margin: 60px 0;
+            border: 1px solid #f1f2f6;
         }
 
-        .anime-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .anime-tag {
-            background: #fff;
-            padding: 5px 15px;
-            border: 1px solid #ffd1dc;
+        .list-title {
+            text-align: center;
             font-size: 0.9rem;
-            color: #555;
-            border-radius: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            letter-spacing: 3px;
+            color: #b2bec3;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .item-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .item {
+            font-size: 0.95rem;
+            color: #636e72;
+            padding: 5px 10px;
+            border-bottom: 1px solid #f1f2f6;
         }
 
         footer { 
             text-align: center; 
-            padding: 60px 0; 
-            font-size: 1rem;
-            color: #aaa;
-            border-top: 1px solid #eee;
+            padding: 80px 0; 
+            font-size: 1.1rem;
+            color: #a29bfe;
+            letter-spacing: 2px;
         }
 
+        /* Purple Heart Trail */
         .trail {
             position: fixed;
             pointer-events: none;
-            font-size: 12px;
-            color: rgba(214, 51, 132, 0.1);
-            animation: fadeOut 2s linear forwards;
+            font-size: 15px;
+            color: #a29bfe;
+            animation: fadeOut 1.5s linear forwards;
             z-index: -1;
         }
-        @keyframes fadeOut { 0% { opacity: 0.8; transform: scale(1); } 100% { opacity: 0; transform: scale(2); } }
+        @keyframes fadeOut { 0% { opacity: 0.6; } 100% { opacity: 0; transform: scale(2) rotate(20deg); } }
     </style>
 </head>
 <body>
@@ -109,57 +114,57 @@
     <div class="container">
         <header>
             <div class="cipher">5 · 9 · 19 · 8 · 1</div>
-            <h1>নিঃশব্দ অনুরাগের স্থাপত্য</h1>
+            <h1>The Eternal Epiphany</h1>
             <p class="quote-main">"Every Instant, Someone Heartily Admires..."</p>
         </header>
 
-        <section class="content-section">
-            <h2>১. কাউকে মন থেকে পছন্দ করার স্বরূপ</h2>
-            <p>মানুষ যখন কাউকে মন থেকে পছন্দ করতে শুরু করে, তখন তার পুরো পৃথিবীটা এক অদ্ভুত ছন্দে বদলে যায়। এটি কোনো হুট করে আসা আবেগ নয়, বরং হৃদয়ের এক গভীর কোণে লালিত একটি সূক্ষ্ম টান। পছন্দের মানুষটির প্রতিটি ছোট ছোট কথা, তার হাসির ভঙ্গি, এমনকি তার নীরবতাও তখন এক বিশেষ অর্থ বহন করে। আপনি কীভাবে বুঝবেন কেউ আপনাকে মন থেকে পছন্দ করছে? এর উত্তর লুকিয়ে থাকে তার আচরণের ক্ষুদ্রতম বিবরণে। সত্যিকারের পছন্দ কখনো জাহির করার বিষয় নয়, এটি অনুভবের বিষয়। যখন কেউ আপনার বলা প্রতিটি সামান্য কথা মনে রাখে, আপনার মন খারাপের কারণ না জেনেই পাশে থাকার চেষ্টা করে, তখন বুঝবেন সেখানে এক গভীর মমতা কাজ করছে।</p>
-            <p>মন থেকে কাউকে পছন্দ করার সবচেয়ে বড় লক্ষণ হলো 'নিঃস্বার্থ মনোযোগ'। যখন কেউ আপনার অগোছালো কথাগুলোও মন দিয়ে শোনে এবং আপনার অসম্পূর্ণতাগুলোকেও শ্রদ্ধার সাথে গ্রহণ করে, তখন সেটি আর সাধারণ ভালো লাগা থাকে না। এটি একটি মানসিক আশ্রয়স্থল হয়ে দাঁড়ায়। পছন্দের মানুষটির জন্য নিজের ভেতরে অজান্তেই এক ধরণের পরিবর্তন আসে—মানুষটি আরও বেশি ধৈর্যশীল এবং সংবেদনশীল হয়ে ওঠে। এই নীরব অনুরাগ কখনো দূরত্বের কাছে হার মানে না, বরং প্রতিটি বাধায় এটি আরও বেশি দৃঢ় হয়।</p>
+        <section class="section">
+            <h2>১. নিঃশব্দ অনুরাগের মনস্তত্ত্ব</h2>
+            <p>কাউকে মন থেকে পছন্দ করার অনুভূতিটা অনেকটা 'K-Drama'-এর সেই স্লো-মোশন মুহূর্তগুলোর মতো, যেখানে পুরো পৃথিবী থমকে যায় কিন্তু হৃদস্পন্দন বেড়ে যায়। এটি কেবল ভালো লাগা নয়, এটি হলো 'I Purple You' ফিলোসফির মতো—অর্থাৎ শেষ পর্যন্ত একে অপরের পাশে থাকার এক নীরব প্রতিশ্রুতি। যখন আপনি কাউকে সত্যিই পছন্দ করেন, তখন তার অসম্পূর্ণতাগুলোও আপনার কাছে গল্পের মতো সুন্দর মনে হয়। আপনি কীভাবে বুঝবেন কেউ আপনাকে ভালোবাসে? তার উত্তর কোনো বড় সংলাপে নয়, বরং লুকিয়ে থাকে তার ছোট ছোট যত্নে। যখন কেউ আপনার মৌনতা বুঝতে পারে, আপনার ভিড়ের মাঝেও একাকীত্ব টুকু মুছে দিতে চায়, তখনই বুঝবেন সেখানে এক গভীর অনুরাগের অস্তিত্ব রয়েছে।</p>
+            <p>প্রকৃত ভালোবাসা কখনো দাবি করে না, বরং এটি 'Magic Shop'-এর মতো যেখানে আপনি আপনার সব দুঃখ জমা দিয়ে প্রশান্তি খুঁজে পান। পছন্দের মানুষটির প্রতিটি স্মৃতি তখন হৃদয়ের প্লে-লিস্টে লুপে বাজতে থাকে। এই অনুভূতিটি মানুষকে নিজের অজান্তেই আরও উন্নত এবং মার্জিত করে তোলে। এটি কোনো হুট করে আসা আবেগ নয়, বরং এটি একটি দীর্ঘস্থায়ী বিবর্তন যেখানে অন্য একজনের হাসিই নিজের বেঁচে থাকার রসদ হয়ে দাঁড়ায়।</p>
         </section>
 
-        <div class="anime-box">
-            <h3 style="text-align: center; margin-bottom: 30px; color: #ff4d6d;">Cinematic Reflections of Emotion</h3>
-            <div class="anime-list">
-                <div class="anime-tag">Your Name</div>
-                <div class="anime-tag">A Silent Voice</div>
-                <div class="anime-tag">The Garden of Words</div>
-                <div class="anime-tag">Weathering With You</div>
-                <div class="anime-tag">I Want to Eat Your Pancreas</div>
-                <div class="anime-tag">Suzume</div>
-                <div class="anime-tag">To Me, The One Who Loved You</div>
-                <div class="anime-tag">To Every You I Loved Before</div>
-                <div class="anime-tag">Shikimori's Not Just a Cutie</div>
-                <div class="anime-tag">The Angel Next Door Spoils Me Rotten</div>
-                <div class="anime-tag">Alya Sometimes Hides Her Feelings in Russian</div>
-                <div class="anime-tag">I Got Married to the Girl I Hate in Class</div>
+        <div class="collection-box">
+            <p class="list-title">Aesthetic Archive: Stories of Soul</p>
+            <div class="item-grid">
+                <div class="item">Your Name</div>
+                <div class="item">A Silent Voice</div>
+                <div class="item">The Garden of Words</div>
+                <div class="item">Weathering With You</div>
+                <div class="item">I Want to Eat Your Pancreas</div>
+                <div class="item">Suzume</div>
+                <div class="item">To Me, The One Who Loved You</div>
+                <div class="item">To Every You I Loved Before</div>
+                <div class="item">Shikimori's Not Just a Cutie</div>
+                <div class="item">The Angel Next Door</div>
+                <div class="item">Alya Hides Her Feelings</div>
+                <div class="item">I Got Married to the Girl I Hate</div>
             </div>
-            <p style="margin-top: 30px; font-style: italic; font-size: 0.95rem; text-align: center; color: #777;">
-                এই গল্পগুলো আমাদের শেখায় যে ভালোবাসা মানে কেবল পাশে থাকা নয়, বরং সময়ের ব্যবধান আর ভাগ্যের অনিশ্চয়তা পেরিয়েও একে অপরের অস্তিত্বকে হৃদয়ে ধারণ করা।
+            <p style="margin-top: 30px; font-size: 0.9rem; text-align: center; color: #b2bec3; font-style: italic;">
+                "Like the scenes of a timeless drama, some connections are destined to stay internal, yet they remain eternally purple."
             </p>
         </div>
 
-        <section class="content-section">
-            <h2>২. ভালোবাসার গন্তব্য ও অনুভূতির গভীরতা</h2>
-            <p>ভালোবাসার আসলে কোনো নির্দিষ্ট গন্তব্য নেই; এটি একটি নিরন্তর যাত্রা। অনেকে মনে করেন ভালোবাসা মানেই প্রাপ্তি, কিন্তু প্রকৃত ভালোবাসা হলো ত্যাগের ও শ্রদ্ধার এক অপূর্ব মিশেল। এর গন্তব্য হলো একে অপরের আত্মিক প্রশান্তি। যখন আপনি কাউকে ভালোবাসেন, তখন তার ভালো থাকাই আপনার কাছে সবচেয়ে বড় সার্থকতা হয়ে দাঁড়ায়। এই অনুভূতিটি অনেকটা 'A Silent Voice' এর মতো, যেখানে শব্দ ছাড়াই অনেক কিছু বলা যায়, অথবা 'Your Name' এর মতো, যেখানে দূরত্ব আর সময় কখনো মূল আবেগকে মুছে ফেলতে পারে না।</p>
-            <p>ভালোবাসার আসল ফিল হলো এক ধরণের অভয়। যখন আপনি জানেন যে পৃথিবীর যেকোনো ঝড়ে একজন মানুষ আপনার প্রতি অগাধ বিশ্বাস রাখবে, তখনই আপনি ভালোবাসার সার্থকতা খুঁজে পান। এটি আপনাকে নিজের প্রতি যত্নশীল হতে শেখায়, আপনাকে একজন উন্নত মানুষ হিসেবে গড়ে তোলে। জীবনের জটিল অংকের ভিড়ে এই সহজ অনুভূতিটুকুই মানুষকে বাঁচিয়ে রাখে। ভালোবাসা হলো সেই সুগন্ধি ফুলের মতো, যা প্রস্ফুটিত হতে সময় নেয় কিন্তু একবার ফুটলে তার সৌরভ চারপাশকে মোহিত করে রাখে। এই নিঃশব্দ প্রশান্তিই হলো ভালোবাসার আসল গন্তব্য।</p>
+        <section class="section">
+            <h2>২. অনুভূতির গন্তব্য ও আত্মিক প্রশান্তি</h2>
+            <p>ভালোবাসার গন্তব্য কোনো নির্দিষ্ট ঠিকানায় নয়, বরং এটি একে অপরের বিশ্বাসের ওপর দাঁড়িয়ে থাকা এক আকাশ। এটি অনেকটা সেই রূপকথার মতো যেখানে সময়ের ব্যবধান থাকলেও টান কখনো কমে না। প্রকৃত অনুরাগের আসল 'ফিল' হলো যখন আপনি কারো সামনে কোনো মুখোশ ছাড়াই নিজের 'Real Face' তুলে ধরতে পারেন এবং জানেন যে সে আপনাকে ঘৃণা করবে না। এটি জীবনের সেই অধ্যায় যেখানে আপনি কেবল অন্যকে নয়, নিজেকেও ভালোবাসতে শেখেন।</p>
+            <p>আমাদের পছন্দের প্রতিটি গল্প—সেটি হোক কোনো অ্যানিমে বা কোনো ড্রামা—আমাদের একটি জিনিসই শেখায়: সংযোগ মানেই প্রাপ্তি নয়, সংযোগ মানে হলো অনুভব করা। এই ৪৪ লাইনের কাব্যিক বয়ান হয়তো আপনার হৃদয়ের গভীরতাকে পুরোপুরি মাপতে পারবে না, কিন্তু এটি একটি ক্ষুদ্র প্রয়াস মাত্র। ভালোবাসা হলো সেই সুগন্ধি ফুলের মতো যা নিঃশব্দে ফোটে কিন্তু পুরো জীবনকে সৌরভময় করে তোলে। এই চিরন্তন প্রশান্তিই হলো নিঃশব্দ অনুরাগের আসল সার্থকতা।</p>
         </section>
 
         <footer>
-            THE ARCHITECTURE OF A SILENT CONNECTION // 2019 - 2026
+            BEYOND THE SCENES // 2019 - 2026
         </footer>
     </div>
 
     <script>
         document.addEventListener('mousemove', function(e) {
             let trail = document.createElement('span');
-            trail.innerHTML = '◈'; 
+            trail.innerHTML = '💜'; /* Purple heart for BTS vibe */
             trail.className = 'trail';
             trail.style.left = e.pageX + 'px';
             trail.style.top = e.pageY + 'px';
             document.body.appendChild(trail);
-            setTimeout(() => { trail.remove(); }, 2000);
+            setTimeout(() => { trail.remove(); }, 1500);
         });
     </script>
 </body>
