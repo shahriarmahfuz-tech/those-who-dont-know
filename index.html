@@ -290,5 +290,27 @@
             setTimeout(() => t.remove(), 1300);
         }
     </script>
-</body>
+</body><script>
+// Right click disable
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    alert('কপি করা নিষেধ! এটা আমার ব্যক্তিগত কাজ।');
+});
+
+// Text select disable
+document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+});
+
+// Keyboard shortcuts disable (Ctrl+C, Ctrl+U, F12 ইত্যাদি)
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's')) {
+        e.preventDefault();
+        alert('কপি/ভিউ সোর্স নিষেধ!');
+    }
+    if (e.key === 'F12') {
+        e.preventDefault();
+    }
+});
+</script>
 </html>
